@@ -13,6 +13,7 @@ import AddTouristSpot from './pages/AddTouristSpot.jsx';
 import UpdateSpot from './pages/UpdateSpot.jsx';
 import Login from './pages/Login.jsx';
 import Register from './pages/Register.jsx';
+import MyList from './pages/MyList.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -32,11 +33,11 @@ const router = createBrowserRouter([
     element:<TouristCard></TouristCard>
   },
 {
-  path: "allTouristSpot",
+  path: "allSpots",
 element:<AllTouristSpot></AllTouristSpot>
 },
 {
-  path:"addTouristSpot",
+  path:"addSpot",
   element:<AddTouristSpot></AddTouristSpot>
 },
 {
@@ -51,6 +52,10 @@ element:<AllTouristSpot></AllTouristSpot>
 {
   path:"register",
   element:<Register></Register>
+},
+{
+  path:"myList",
+  element:<MyList ></MyList>
 }
 ]);
 createRoot(document.getElementById('root')).render(

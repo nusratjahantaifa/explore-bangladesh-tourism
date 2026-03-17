@@ -1,6 +1,7 @@
 
 import { Link } from "react-router-dom";
-//import Navbar from "../Navbar/Navbar";
+import Navbar from "../components/Navbar";
+
 const Login = () => {
     const handleLogin = e =>{
         e.preventDefault();
@@ -10,7 +11,7 @@ const Login = () => {
     }
     return (
         <div>
-            {/* <Navbar></Navbar> */}
+           <Navbar></Navbar>
 
               
   <div className="hero-content flex-col lg:flex-row-reverse">

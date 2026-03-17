@@ -1,28 +1,51 @@
-
-
 const Banner = () => {
-    return (
-      <div className="hero min-h-screen" style={{background: 'green'}}>
-  <div className="hero-overlay bg-opacity-30"></div>
-  <div className="hero-content text-center text-neutral-content">
-    <div className="max-w-md">
-      <h1 className="mb-5 text-5xl font-bold text-center">Explore the Natural Wonders of Bangladesh</h1>
-      <p className="mb-5">
-        Bangladesh, a beautiful South Asian country, is home to a diverse range
-         of natural attractions, from lush green landscapes to serene riverine beauty.
-          The country is crisscrossed by the world’s largest delta formed by the Ganga, 
-          Brahmaputra, and Meghna rivers, offering unique 
-          ecosystems and picturesque views. 
-          Bangladesh also boasts the Sundarban,
-         the world’s largest mangrove forest and a UNESCO World Heritage Site.
-      </p>
-     <div className="text-center">
-         <button className="btn btn-primary text-center rounded">Explore More</button>
-     </div>
+  return (
+
+
+    <div className="carousel w-full h-[500px]">
+ 
+      {/* Slide 1 */}
+      <div id="slide1" className="carousel-item relative w-full">
+       
+        <img src="https://i.postimg.cc/28x3g81v/maitheli-maitra-n-Z2c-Eh8Qzcg-unsplash-(1).jpg" className="w-full object-cover" />
+        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+          <a href="#slide3" className="btn btn-circle">❮</a>
+          <a href="#slide2" className="btn btn-circle">❯</a>
+        </div>
+        <div className="absolute bottom-10 left-10 text-white">
+          <h2 className="text-3xl font-bold">Sundarbans</h2>
+          <p>Explore the largest mangrove forest</p>
+        </div>
+      </div>
+
+      {/* Slide 2 */}
+      <div id="slide2" className="carousel-item relative w-full">
+        <img src="https://i.postimg.cc/GtDrrz32/pexels-musaddek-sayek-2152825668-33684437.jpg" className="w-full object-cover" />
+        <div className="absolute flex justify-between left-5 right-5 top-1/2">
+          <a href="#slide1" className="btn btn-circle">❮</a>
+          <a href="#slide3" className="btn btn-circle">❯</a>
+        </div>
+        <div className="absolute bottom-10 left-10 text-white">
+          <h2 className="text-3xl font-bold">Cox’s Bazar</h2>
+          <p>Longest sea beach in the world</p>
+        </div>
+      </div>
+
+      {/* Slide 3 */}
+      <div id="slide3" className="carousel-item relative w-full">
+        <img src="https://i.postimg.cc/Njg2023k/pexels-imshaamim-32766712.jpg" className="w-full object-cover" />
+        <div className="absolute flex justify-between left-5 right-5 top-1/2">
+          <a href="#slide2" className="btn btn-circle">❮</a>
+          <a href="#slide1" className="btn btn-circle">❯</a>
+        </div>
+        <div className="absolute bottom-10 left-10 text-white">
+          <h2 className="text-3xl font-bold">Bandarban</h2>
+          <p>Beauty of hills and nature</p>
+        </div>
+      </div>
+
     </div>
-  </div>
-</div>
-    );
+  );
 };
 
 export default Banner;

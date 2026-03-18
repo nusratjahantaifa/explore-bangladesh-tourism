@@ -39,6 +39,7 @@ const createUser = (email, password) =>{
     setLoading(true);
     return signOut(auth);
   };
+ 
 //user state observer
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {

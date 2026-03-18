@@ -14,6 +14,7 @@ import UpdateSpot from './pages/UpdateSpot.jsx';
 import Login from './pages/Login.jsx';
 import Register from './pages/Register.jsx';
 import MyList from './pages/MyList.jsx';
+import ErrorPage from './pages/ErrorPage.jsx';
 import AuthProvider from './providers/AuthProvider.jsx';
 const router = createBrowserRouter([
   {
@@ -57,6 +58,10 @@ element:<AllTouristSpot></AllTouristSpot>
 {
   path:"myList",
   element:<MyList ></MyList>
+},
+{
+  path: "*",
+  element: <ErrorPage />
 }
 ]);
 createRoot(document.getElementById('root')).render(

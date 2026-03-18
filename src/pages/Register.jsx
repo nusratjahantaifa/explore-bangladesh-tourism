@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import { updateProfile } from "firebase/auth";
 const Register = () => {
-const { createUser } = useContext(AuthContext)
+const { createUser, loading } = useContext(AuthContext)
 
 const handleRegister = e =>{
     e.preventDefault ();
@@ -16,7 +16,13 @@ const handleRegister = e =>{
         const email = form.get('email');
         const password = form.get('password');
   
-
+if (loading) {
+  return (
+    <div className="text-center mt-20">
+      <span className="loading loading-spinner loading-lg"></span>
+    </div>
+  );
+}
 //password validation
         if (!/[A-Z]/.test(password)) {
     return alert("Password must have an uppercase letter");
@@ -49,6 +55,7 @@ createUser(email, password)
 
 
 };
+
   return (
         <div>
           <Navbar></Navbar>

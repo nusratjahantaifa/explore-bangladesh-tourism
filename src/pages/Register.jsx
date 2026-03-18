@@ -1,39 +1,58 @@
 
-// import { useContext } from "react";
-// import Navbar from "../Navbar/Navbar";
- import { Link } from "react-router-dom";
-// import { AuthContext } from "../../providers/AuthProvider";
+import { useContext } from "react";
+//  import Navbar from "../components/Navbar";
+import { Link } from "react-router-dom";
+import { AuthContext } from "../providers/AuthProvider";
+import { updateProfile } from "firebase/auth";
 const Register = () => {
-// const { createUser }= useContext(AuthContext)
+const { createUser } = useContext(AuthContext)
 
 const handleRegister = e =>{
     e.preventDefault ();
-    console.log(e.currentTarget);
+
         const form = new FormData(e.currentTarget);
-        const email = form.get('email');
         const name = form.get('name');
         const photo = form.get('photo');
+        const email = form.get('email');
         const password = form.get('password');
-        console.log(email, password,name, photo );
+  
+
+//password validation
+        if (!/[A-Z]/.test(password)) {
+    return alert("Password must have an uppercase letter");
+}
+if (!/[a-z]/.test(password)) {
+    return alert("Password must have a lowercase letter");
+}
+if (password.length < 6) {
+    return alert("Password must be at least 6 characters");
+}
 //create user
 
 createUser(email, password)
 .then(result =>{
-    console.log(result.user)
+    const user = result.user;
+ 
+    updateProfile(user, {
+        displayName: name,
+        photoURL: photo,
+    })
+      .then(() => {
+         alert("Registration Successful");
+    
+    });
+    
 })
 .catch(error =>{
-    console.error(error)
-})
+    console.error(error.massage)
+});
 
 
-}
-
-
-
-    return (
+};
+  return (
         <div>
           {/* <Navbar></Navbar> */}
-           <h2 className="text-3xl">Please login</h2> 
+           <h2 className="text-3xl">Register</h2> 
 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
       <form  onSubmit={handleRegister}  className="card-body">
         <div className="form-control">
@@ -46,7 +65,8 @@ createUser(email, password)
              <label className="label">
             <span className="label-text">Photo URL</span>
           </label>
-           <input type="text" name="Photo" className="input input-bordered" required />
+           <input type="text" name="photo" className="input input-bordered" required />
+       
           </div>
           <div className="form-control">
           <label className="label">

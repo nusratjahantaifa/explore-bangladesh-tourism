@@ -1,15 +1,14 @@
 import { Link, NavLink } from "react-router-dom";
-// import { useContext } from "react";
-// import { AuthContext } from "../providers/AuthProvider";
+import { useContext } from "react";
+import { AuthContext } from "../providers/AuthProvider";
 
 const Navbar = () => {
-//   const { user, logOut } = useContext(AuthContext);
-
-//   const handleLogout = () => {
-//     logOut()
-//       .then(() => console.log("Logged out"))
-//       .catch(err => console.log(err));
-//   };
+ const { user, logOut } = useContext(AuthContext);
+ const handleLogout = () => {
+    logOut()
+      .then(() => console.log("Logged out"))
+      .catch(err => console.log(err));
+  };
 
   const navLinks = (
     <>
@@ -35,7 +34,7 @@ const Navbar = () => {
         {navLinks}
 
         {/* Conditional Auth */}
-        {/* {
+        {
           user ? (
             <>
               <img
@@ -53,7 +52,7 @@ const Navbar = () => {
               <Link to="/register" className="btn btn-sm">Register</Link>
             </>
           )
-        } */}
+        }
       </div>
     </div>
   );

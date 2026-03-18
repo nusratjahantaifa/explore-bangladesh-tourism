@@ -1,6 +1,6 @@
 
 import { useContext } from "react";
-//  import Navbar from "../components/Navbar";
+  import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import { updateProfile } from "firebase/auth";
@@ -51,7 +51,7 @@ createUser(email, password)
 };
   return (
         <div>
-          {/* <Navbar></Navbar> */}
+          <Navbar></Navbar>
            <h2 className="text-3xl">Register</h2> 
 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
       <form  onSubmit={handleRegister}  className="card-body">

@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
-const TouristCard = ({ spot }) => {
+const TouristCard = ({ spot, spots, setSpots }) => {
 
   if (!spot) {
     return <p>Loading...</p>;
@@ -43,6 +43,8 @@ fetch(`http://localhost:5000/spots/${_id}`,
       text: "TouristCard deleted.",
       icon: "success"
     });
+    const remaining = spots.filter(spot => spot._id !== _id);
+    setSpots(remaining);
     }
 })
   }
@@ -63,7 +65,7 @@ fetch(`http://localhost:5000/spots/${_id}`,
       </div>
        <div className="card-actions justify-end">
 
-        <Link to={`/upDateSpot/${_id}`}>
+        <Link to={`/updateSpot/${_id}`}>
          <button className="btn btn-primary">
               Update Spot
            </button>

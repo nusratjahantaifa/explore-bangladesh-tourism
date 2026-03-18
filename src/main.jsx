@@ -14,6 +14,7 @@ import UpdateSpot from './pages/UpdateSpot.jsx';
 import Login from './pages/Login.jsx';
 import Register from './pages/Register.jsx';
 import MyList from './pages/MyList.jsx';
+import AuthProvider from './providers/AuthProvider.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -60,6 +61,8 @@ element:<AllTouristSpot></AllTouristSpot>
 ]);
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-   <RouterProvider router={router} />
+  <AuthProvider>
+     <RouterProvider router={router} />
+  </AuthProvider>
   </StrictMode>,
 )

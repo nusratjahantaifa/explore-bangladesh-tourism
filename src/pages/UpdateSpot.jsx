@@ -37,7 +37,7 @@ const handleUpdateSpot = e => {
     totalVisitorsPerYear: form.totalVisitorsPerYear.value
   };
 
-  fetch(`http://localhost:5000/spots/${_id}`, {
+  fetch(`https://explore-bangladesh-tourism.onrender.com/spots/${_id}`, {
     method: "PUT",
     headers: {
       "content-type": "application/json"

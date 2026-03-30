@@ -21,7 +21,7 @@ const AddTouristSpot = () => {
       totalVisitorsPerYear: form.totalVisitorsPerYear.value
     };
 
-    fetch("http://localhost:5000/addTouristSpot", {
+    fetch("https://explore-bangladesh-tourism.onrender.com/addTouristSpot", {
       method: "POST",
       headers: {
         "content-type": "application/json"

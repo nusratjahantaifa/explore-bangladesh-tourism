@@ -20,7 +20,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
-    loader: () => fetch("http://localhost:5000/spots")
+    loader: () => fetch("https://explore-bangladesh-tourism.onrender.com/spots")
   },
 
   
@@ -45,7 +45,7 @@ element:<AllTouristSpot></AllTouristSpot>
 {
   path:"updateSpot/:id",
   element:<UpdateSpot></UpdateSpot>,
-  loader: ({params}) => fetch(`http://localhost:5000/spots/${params.id}`)
+  loader: ({params}) => fetch(`https://explore-bangladesh-tourism.onrender.com/spots/${params.id}`)
 },
 {
   path:"login",

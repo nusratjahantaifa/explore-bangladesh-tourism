@@ -29,7 +29,7 @@ Swal.fire({
   if (result.isConfirmed) {
    
     // console.log('delete confirmed')
-fetch(`http://localhost:5000/spots/${_id}`,
+fetch(`https://explore-bangladesh-tourism.onrender.com/spots/${_id}`,
     {
         method: 'DELETE'
     }

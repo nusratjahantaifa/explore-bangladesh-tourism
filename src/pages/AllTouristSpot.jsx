@@ -7,7 +7,7 @@ const AllTouristSpots = () => {
 
   useEffect(() => {
 
-    fetch("http://localhost:5000/spots")
+    fetch("https://explore-bangladesh-tourism.onrender.com/spots")
       .then(res => res.json())
       .then(data => setSpots(data));
 

@@ -131,7 +131,7 @@ defaultValue={spots.short_description}
 className="textarea textarea-bordered md:col-span-2"
 ></textarea>
 
-<button onClick={() => handleUpdateSpot(_id)}
+<button type="submit"
  className="btn btn-primary md:col-span-2">
 Update Spot
 </button>

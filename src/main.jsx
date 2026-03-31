@@ -25,21 +25,21 @@ const router = createBrowserRouter([
 
   
    {
-    path: "home",
+    path: "/home",
     element: <Home> </Home>,
   
   },
  
   {
-    path:'touristCard',
+    path:'/touristCard',
     element:<TouristCard></TouristCard>
   },
 {
-  path: "allSpots",
+  path: "/allSpots",
 element:<AllTouristSpot></AllTouristSpot>
 },
 {
-  path:"addSpot",
+  path:"/addSpot",
   element:<AddTouristSpot></AddTouristSpot>
 },
 {
@@ -48,15 +48,15 @@ element:<AllTouristSpot></AllTouristSpot>
   loader: ({params}) => fetch(`https://explore-bangladesh-tourism.onrender.com/spots/${params.id}`)
 },
 {
-  path:"login",
+  path:"/login",
   element:<Login></Login>
 },
 {
-  path:"register",
+  path:"/register",
   element:<Register></Register>
 },
 {
-  path:"myList",
+  path:"/myList",
   element:<MyList ></MyList>
 },
 {

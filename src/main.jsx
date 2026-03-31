@@ -18,7 +18,7 @@ import ErrorPage from './pages/ErrorPage.jsx';
 import AuthProvider from './providers/AuthProvider.jsx';
 const router = createBrowserRouter([
   {
-    path: "/home",
+    path: "/",
     element: <App></App>,
     loader: () => fetch("https://explore-bangladesh-tourism.onrender.com/spots")
   },
@@ -27,7 +27,7 @@ const router = createBrowserRouter([
    {
     path: "home",
     element: <Home> </Home>,
- 
+  
   },
  
   {

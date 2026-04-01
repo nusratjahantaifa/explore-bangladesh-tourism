@@ -16,16 +16,7 @@ import Register from './pages/Register.jsx';
 import MyList from './pages/MyList.jsx';
 import ErrorPage from './pages/ErrorPage.jsx';
 import AuthProvider from './providers/AuthProvider.jsx';
- 
-    // loader: () => fetch("https://explore-bangladesh-tourism.onrender.com/spots")
- 
-  // loader: ({params}) => fetch(`https://explore-bangladesh-tourism.onrender.com/spots/${params.id}`)
 
-
-// {
-//   path: "*",
-//   element: <ErrorPage />
-// }
 const router = createBrowserRouter([
   {
     path: "/",

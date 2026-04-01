@@ -16,54 +16,60 @@ import Register from './pages/Register.jsx';
 import MyList from './pages/MyList.jsx';
 import ErrorPage from './pages/ErrorPage.jsx';
 import AuthProvider from './providers/AuthProvider.jsx';
+ 
+    // loader: () => fetch("https://explore-bangladesh-tourism.onrender.com/spots")
+ 
+  // loader: ({params}) => fetch(`https://explore-bangladesh-tourism.onrender.com/spots/${params.id}`)
+
+
+// {
+//   path: "*",
+//   element: <ErrorPage />
+// }
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App></App>,
-    loader: () => fetch("https://explore-bangladesh-tourism.onrender.com/spots")
-  },
-
-  
-   {
-    path: "/home",
-    element: <Home> </Home>,
-  
-  },
- 
-  {
-    path:'/touristCard',
-    element:<TouristCard></TouristCard>
-  },
-{
-  path: "/allSpots",
-element:<AllTouristSpot></AllTouristSpot>
-},
-{
-  path:"/addSpot",
-  element:<AddTouristSpot></AddTouristSpot>
-},
-{
-  path:"updateSpot/:id",
-  element:<UpdateSpot></UpdateSpot>,
-  loader: ({params}) => fetch(`https://explore-bangladesh-tourism.onrender.com/spots/${params.id}`)
-},
-{
-  path:"/login",
-  element:<Login></Login>
-},
-{
-  path:"/register",
-  element:<Register></Register>
-},
-{
-  path:"/myList",
-  element:<MyList ></MyList>
-},
-{
-  path: "*",
-  element: <ErrorPage />
-}
+    element: <App />, // main layout
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "/",
+        element: <Home />
+      },
+      {
+        path: "/home",
+        element: <Home />
+      },
+      {
+        path: "/allSpots",
+        element: <AllTouristSpot />
+      },
+      {
+        path: "/addSpot",
+        element: <AddTouristSpot />
+      },
+      {
+        path: "/updateSpot/:id",
+        element: <UpdateSpot />,
+        loader: ({ params }) =>
+          fetch(`https://explore-bangladesh-tourism.onrender.com/spots/${params.id}`)
+      },
+      {
+        path: "/login",
+        element: <Login />
+      },
+      {
+        path: "/register",
+        element: <Register />
+      },
+      {
+        path: "/myList",
+        element: <MyList />
+      }
+    ]
+  }
 ]);
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
   <AuthProvider>

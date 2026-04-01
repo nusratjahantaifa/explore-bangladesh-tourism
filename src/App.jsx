@@ -1,6 +1,6 @@
 
 
-import { useLoaderData } from 'react-router-dom';
+import { Outlet, useLoaderData } from 'react-router-dom';
 import './App.css';
 import TouristCard from './components/TouristCard';
 import { useState } from 'react';
@@ -17,6 +17,7 @@ const [spots, setSpots] = useState(loadedSpots);
   
  <h1 className='text-6xl text-center my-20 text-blue-400'>
   Explore BD Tourism</h1>
+  <Outlet></Outlet>
   <p></p>
 <div className='grid md:grid-cols-2 gap-4'>
    {
